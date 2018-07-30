@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body id="sharedBody">
+
+    <div class="container">
+        <div class="marquee">
+            <div class="img1">C</div>
+            <div class="img1">L</div>
+            <div class="img1">O</div>
+            <div class="img1">T</div>
+            <div class="img1">H</div>
+            <div class="img1">R</div>
+        </div>
+    </div>
+
+    @* New NavBar *@
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Clothr</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Add clothes to your wardrobe!
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Tops", "Index", "Tops")</li>
+                        <li>@Html.ActionLink("Bottoms", "Index", "Bottoms")</li>
+                        <li>@Html.ActionLink("Shoes", "Index", "Shoes")</li>
+                        <li>@Html.ActionLink("Accessories", "Index", "Accessories")</li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Outfits", "Index", "Outfits")</li>
+
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </nav>
+    @* Original NavBar *@
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    @* Original NavBar End *@
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer id="footer">
+            <p>&copy; @DateTime.Now.Year - Ernest Bluford WCCI Project Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

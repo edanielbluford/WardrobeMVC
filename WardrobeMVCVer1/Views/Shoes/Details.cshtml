@@ -1,0 +1,56 @@
+﻿@model WardrobeMVCVer1.Sho
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div class="container">
+    <div  class=container-fluid id="detailsbox">
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Name)
+        </div>
+
+        <div class="row">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Photo)
+        </div>
+
+        <div class="row">
+            @Html.DisplayFor(model => model.Photo)
+        </div>
+
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Type)
+        </div>
+
+        <div class="row">
+            @Html.DisplayFor(model => model.Type)
+        </div>
+
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Season)
+        </div>
+
+        <div class="row">
+            @Html.DisplayFor(model => model.Season)
+        </div>
+
+        <div class="row">
+            @Html.DisplayNameFor(model => model.Occasion)
+        </div>
+
+        <div class="row">
+            @Html.DisplayFor(model => model.Occasion)
+        </div>
+
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShoesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

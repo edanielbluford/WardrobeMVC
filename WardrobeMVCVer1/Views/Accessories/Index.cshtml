@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WardrobeMVCVer1.Accessory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Add a an Accessory Below</h2>
+
+<p class="glyphicon glyphicon-record" id="CreateNew">
+    @Html.ActionLink("Add", "Create")
+</p>
+<div  class="container-fluid">
+    <div>
+        
+    </div>
+
+    @foreach (var item in Model)
+    {
+    
+        <div class="card" style="width:400px">
+            <img class="card-img-top" @Html.DisplayFor(modelItem => item.Photo) > @*I tried to make this photo thing happen it just wasn't working out*@
+            <div class="card-body">
+                <h4 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h4>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Type)</p>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Season)</p>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Occasion)</p>
+                <a href="#" class="btn btn-primary">@Html.ActionLink("Edit", "Edit", new { id = item.AccessoryID })</a>
+                <a href="#" class="btn btn-primary">@Html.ActionLink("Details", "Details", new { id = item.AccessoryID })</a>
+                <a href="#" class="btn btn-primary">@Html.ActionLink("Delete", "Delete", new { id = item.AccessoryID })</a>
+            </div>
+        </div>
+     
+    }
+
+</div>
